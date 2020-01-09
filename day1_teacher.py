@@ -378,8 +378,7 @@ def startswithATC(seq):
     if seq.startswith("ATC"):
         print(seq.count('T')/len(seq))
     elif seq.startswith("AGC"):
-        gcount = 0
-        gcount = gcount + seq.count("GG") + seq.count("CG") + seq.count("TG")
+        gcount = seq.count("G") - seq.count("AG")
         print('Starting with AGC', gcount)
     else:
         print("Starting with neither ATC or AGC")
